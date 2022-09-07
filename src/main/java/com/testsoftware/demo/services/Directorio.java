@@ -26,7 +26,7 @@ public class Directorio {
 
 	public boolean deletePersonaByIdentificacion(String identificacion) {
 		try {
-			personaRepository.deleteByIdentificacion(identificacion);
+			personaRepository.removeByIdentificacion(identificacion);
 			facturaRepository.deleteByIdentificacion(identificacion);
 			return true;
 		} catch (Exception e) {

@@ -1,4 +1,5 @@
 package com.testsoftware.demo.models;
+
 import java.sql.Date;
 import javax.persistence.*;
 
@@ -6,20 +7,21 @@ import javax.persistence.*;
 @Table(name = "facturas")
 
 public class Factura {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
 	private Long id;
-	
+
 	private Date fecha;
 	private Double monto;
+	private String identificacion;
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)  {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -37,5 +39,13 @@ public class Factura {
 
 	public void setMonto(Double monto) {
 		this.monto = monto;
+	}
+
+	public String getIdentificacion() {
+		return identificacion;
+	}
+
+	public void setIdentificacion(String identificacion) {
+		this.identificacion = identificacion;
 	}
 }
